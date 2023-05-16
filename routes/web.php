@@ -1,7 +1,11 @@
 <?php
 
+use App\Http\Controllers\SubjectController;
+use App\Models\subject;
 use App\Models\Department;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Redirect;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,3 +27,5 @@ route::get('departments', function(){
     $departments =Department::get();
     return view('departments',['departments'=>$departments]);
 });
+
+route::resource('subjects',SubjectController::class);
